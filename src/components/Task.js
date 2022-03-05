@@ -7,7 +7,10 @@ export default function Task({
   onPinTask,
 }) {
   return (
-    <div className={`list-item ${state}`}>
+    <div
+      className={`list-item ${state}`}
+      style={{ backgroundColor: '#d3edf4' }}
+    >
       <label className="checkbox">
         <input
           type="checkbox"
@@ -22,14 +25,14 @@ export default function Task({
           aria-label={`archiveTask-${id}`}
         />
       </label>
-
-      <input
-        type="text"
-        value={title}
-        readOnly={true}
-        placeholder="Input title"
-        style={{ background: 'red' }}
-      />
+      <div className="title">
+        <input
+          type="text"
+          value={title}
+          readOnly={true}
+          placeholder="Input title"
+        />
+      </div>
       <div className="actions" onClick={(event) => event.stopPropagation()}>
         {state !== 'TASK_ARCHIVED' && (
           // eslint-disable-next-line jsx-a11y/anchor-is-valid
